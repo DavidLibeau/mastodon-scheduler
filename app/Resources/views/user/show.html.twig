@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1><a href="{{ user.mastodonObject.url }}" target="_blank" ><img src="{{ user.mastodonObject.avatar_static }}" style="border-radius: 100%" data-toggle="tooltip" data-placement="bottom" title="Open profile"/></a> {{ user.name }}</h1>
+
+    <p>{{ user.mastodonObject.note|raw }}</p>
+
+
+    {{ dump(user.mastodonObject) }}
+    
+{% endblock %}

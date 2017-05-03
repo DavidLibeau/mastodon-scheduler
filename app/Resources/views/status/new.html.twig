@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="page-header">
+        <h1>New status <small>Schedule now, toot later!</small></h1>
+    </div>
+
+    {% if(error) %}
+        <div class="alert alert-danger" role="alert"><strong>Error:</strong> {{ error }}</div>
+    {%  endif %}
+
+    <form id="MastodonAuth">
+        <div class="panel panel-default">
+            <div class="panel-heading">{{ form_label(form.account) }}</div>
+            <div class="panel-body">
+                {% if(app.session.get('user_name')) %}
+                    <p>Signed in as <a href="/logout" class="navbar-link" data-toggle="tooltip" data-placement="right" title="Logout">{{ app.session.get('user_name')  }}</a></p>
+                {% else %}
+                <div class="form-group">
+                    <label for="instance">Instance URL</label>
+                    <input type="text" class="form-control" id="MastodonAuth_instance" placeholder="https://mastodon.social" required>
+                </div>
+                <button type="submit" class="btn btn-default">Sign in</button>
+                {% endif %}
+            </div>
+        </div>
+    </form>
+
+    {{ form_start(form) }}
+        <div class="form-group">
+            {{ form_widget(form.account) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.content) }}
+            {{ form_widget(form.content) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.datetime) }}
+            {{ form_widget(form.datetime) }}
+            <p class="help-block">Pre-filled with current date and time.</p>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Toot later!" />
+    {{ form_end(form) }}
+
+    <script src="{{ asset('lib/mastodon.js') }}"></script>
+    <script src="{{ asset('newStatus_script.js') }}"></script>
+{% endblock %}

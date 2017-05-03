@@ -1,0 +1,42 @@
+/* Fix */
+
+.invisible{
+    display: none;
+}
+
+
+/* Nav */
+
+.navbar{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: 0;
+}
+.navbar .dropdown{
+    display: inline-block;
+}
+.navbar .dropdown .btn-link{
+    padding: 0;
+}
+
+
+/* New status */
+
+#appbundle_status_account {
+    height: 0px;
+    padding: 0;
+    margin-top: -20px;
+    opacity: 0;
+    cursor: initial!important;
+}
+
+#appbundle_status_datetime select:not(:first-child){
+    margin: 0 2px;
+}
+#appbundle_status_datetime select:first-child{
+    margin-right: 2px;
+}
+
+textarea {
+    max-width: 100%;
+}

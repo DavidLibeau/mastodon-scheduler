@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Mastodon scheduler{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('emoji_one__23f0.png') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/bootstrap-3.3.7-dist/css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ asset('style.css') }}">
+        <script src="//dav.li/jquery/3.1.1.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-5" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
+                            <span class="icon-bar"></span> <span class="icon-bar"></span>
+                        </button>
+                        <a href="/" class="navbar-brand">Mastodon scheduler</a>
+                        <ul class="nav navbar-nav">
+                            <li><a href="/about">(Beta)</a></li>
+                        </ul>
+                    </div>
+                    {% if(app.session.get('user_name')) %}
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-5">
+                        <div class="navbar-text navbar-right">Signed in as
+                            <div class="dropdown">
+                                <button class="btn btn-link" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span id="SESSION_username">{{ app.session.get('user_name')  }}</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                    <li><a href="/user/me">Profil page</a></li>
+                                    <li><a href="/status/all">Statuses list</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/logout">Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </nav>
+            {% block body %}{% endblock %}
+        </div>
+        <script src="{{ asset('assets/bootstrap-3.3.7-dist/js/bootstrap.js') }}"></script>
+        {% block javascripts %}{% endblock %}
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        });
+    </script>
+    </body>
+</html>
