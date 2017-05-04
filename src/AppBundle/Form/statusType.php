@@ -17,7 +17,7 @@ class statusType extends AbstractType
     {
         $builder->add('account');
         $builder->add('content', TextareaType::class);
-        $builder->add('datetime', null, array('label' => 'Date (UTC)'));
+        $builder->add('datetime', null, array('label' => 'Date'));
     }
 
     /**
