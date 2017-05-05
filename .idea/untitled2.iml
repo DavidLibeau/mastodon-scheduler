@@ -81,7 +81,6 @@
           <root url="file://$MODULE_DIR$/vendor/jdorn/sql-formatter" />
           <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
           <root url="file://$MODULE_DIR$/vendor/paragonie/random_compat" />
-          <root url="file://$MODULE_DIR$/vendor/phediverse/mastodon-rest" />
           <root url="file://$MODULE_DIR$/vendor/psr/cache" />
           <root url="file://$MODULE_DIR$/vendor/psr/http-message" />
           <root url="file://$MODULE_DIR$/vendor/psr/log" />
@@ -100,7 +99,6 @@
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-util" />
           <root url="file://$MODULE_DIR$/vendor/symfony/swiftmailer-bundle" />
           <root url="file://$MODULE_DIR$/vendor/symfony/symfony" />
-          <root url="file://$MODULE_DIR$/vendor/thecodingcompany/php-mastodon" />
           <root url="file://$MODULE_DIR$/vendor/twig/twig" />
         </CLASSES>
         <SOURCES>
@@ -123,7 +121,6 @@
           <root url="file://$MODULE_DIR$/vendor/jdorn/sql-formatter" />
           <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
           <root url="file://$MODULE_DIR$/vendor/paragonie/random_compat" />
-          <root url="file://$MODULE_DIR$/vendor/phediverse/mastodon-rest" />
           <root url="file://$MODULE_DIR$/vendor/psr/cache" />
           <root url="file://$MODULE_DIR$/vendor/psr/http-message" />
           <root url="file://$MODULE_DIR$/vendor/psr/log" />
@@ -142,7 +139,6 @@
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-util" />
           <root url="file://$MODULE_DIR$/vendor/symfony/swiftmailer-bundle" />
           <root url="file://$MODULE_DIR$/vendor/symfony/symfony" />
-          <root url="file://$MODULE_DIR$/vendor/thecodingcompany/php-mastodon" />
           <root url="file://$MODULE_DIR$/vendor/twig/twig" />
         </SOURCES>
       </library>
