@@ -87,7 +87,7 @@ class DefaultController extends Controller
                 if($request->query->get('dev')=="true"){
                     $redirectURL="http://127.0.0.1:8000/auth/".$instanceURL;
                 }else{
-                    $redirectURL="http://scheduler.mastodon.tools/auth/".$instanceURL;
+                    $redirectURL="http://127.0.0.1:8000/auth/".$instanceURL;
                 }
 
                 $ch = curl_init("https://".$instanceURL."/api/v1/apps");
@@ -143,6 +143,10 @@ class DefaultController extends Controller
                     curl_close($ch);
                     $M_token=json_decode($ch_res);
 
+                    /*return $this->render('auth/dump.html.twig', array(
+                        'dump' => $M_token,
+                    ));*/
+
                     //Get Mastodon user
                     $ch = curl_init("https://".$instanceURL."/api/v1/accounts/verify_credentials");
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -185,10 +189,6 @@ class DefaultController extends Controller
                     $session->set('user_token', $M_token->access_token);
                     return $this->redirectToRoute('homepage');
 
-                    /*return $this->render('auth/redirect.html.twig', array(
-                        'token' => $M_token,
-                        'user' => $M_user,
-                    ));*/
                 }else{ //we are here only to have the app_id
                     return $this->render('auth/get.html.twig', array(
                         'response' => "ok",

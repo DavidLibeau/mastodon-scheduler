@@ -9,12 +9,14 @@ var getLocation = function(href) {
 var connected=false;
 
 if(!$("#SESSION_username").text()){
-    $("form[name='appbundle_status'] *").attr("disabled", "disabled");
+    $("form[name='appbundle_status'] *").attr("disabled", "disabled").attr("placeholder","");
 }
 
 
 $("#MastodonAuth").submit(function (evt) {
     console.log("Mastodon Authentification...");
+
+    $("#MastodonAuth [type=\"submit\"]").text("Loading...");
 
     evt.preventDefault();
 
@@ -39,7 +41,12 @@ $("#MastodonAuth").submit(function (evt) {
                 "code", // oauth method
                 ["read", "write"]
             );
+        }else{
+            $("#MastodonAuth [type=\"submit\"]").text("Error");
         }
+    }).fail(function (data) {
+        $("#MastodonAuth [type=\"submit\"]").text("Error");
+        $("#MastodonAuth [type=\"submit\"]+.help-block").text("The url is not valid. Try again.")
     });
 
 

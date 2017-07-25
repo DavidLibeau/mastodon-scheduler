@@ -111,10 +111,7 @@ class statusController extends Controller
                 'delete_form' => $deleteForm->createView(),
             ));
         }else{
-            return $this->render('status/show.html.twig', array(
-                'status' => $status,
-                'delete_form' => "",
-            ));
+            return $this->redirectToRoute('homepage');
         }
 
 

@@ -1,0 +1,131 @@
+body {
+    background: #282c37;
+    color: #9baec8;
+}
+
+a, small, .btn-default {
+    color: #d9e1e8!important;
+}
+
+
+.page-header {
+    border-bottom-color: black;
+}
+.panel {
+    background-color: rgb(40, 45, 55);
+    border-color: #1f232b;
+}
+.panel-heading {
+    background-color: rgb(48, 54, 67)!important;
+    border-color: #1f232b!important;
+    color: #9baec8!important;
+}
+
+.btn {
+    background: transparent;
+    border: 1px solid #9baec8;
+    padding: 3px 15px;
+    color: #9baec8!important;
+    margin-left: 4px;
+    font-weight: 500;
+}
+.btn:hover {
+    background: transparent;
+    color: #b5c3d6!important;
+    border-color: #b5c3d6;
+}
+.btn-primary {
+    padding: 8px 15px;
+    color: #1f232b!important;
+    background-color: #9baec8!important;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0,0,0,.1);
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #b5c3d6!important;
+    color: #1f232b!important;
+}
+
+.form-control, textarea {
+    background: #fff;
+    border-color: #1f232b;
+}
+.form-control:focus {
+    border-color: #1f232b;
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color: #31343c;
+}
+
+.navbar-default, .dropdown-menu {
+    background-color: rgb(48, 54, 67)!important;
+    border-color: #1f232b!important;
+    color: #9baec8!important;
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    background-color: rgb(48, 54, 67);
+}
+
+.divider {
+    background-color: black!important;
+}
+
+.table > thead > tr > th {
+    border-bottom-color: #9baec8;
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    border-top-color: #9baec8;
+}
+
+
+
+/* Fix */
+
+.invisible{
+    display: none;
+}
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+    pointer-events: none;
+}
+
+/* Nav */
+
+.navbar {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: 0;
+}
+.navbar .dropdown {
+    display: inline-block;
+}
+.navbar .dropdown .btn-link {
+    padding: 0;
+    border: 0;
+}
+.navbar-brand img {
+    display: inline-block;
+    height: 100%;
+}
+
+
+/* New status */
+
+#appbundle_status_account {
+    height: 0px;
+    padding: 0;
+    margin-top: -20px;
+    opacity: 0;
+    cursor: initial!important;
+}
+
+#appbundle_status_datetime select:not(:first-child){
+    margin: 0 2px;
+}
+#appbundle_status_datetime select:first-child{
+    margin-right: 2px;
+}
+
+textarea {
+    max-width: 100%;
+}

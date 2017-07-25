@@ -3,9 +3,22 @@
 {% block body %}
     <h1><a href="{{ user.mastodonObject.url }}" target="_blank" ><img src="{{ user.mastodonObject.avatar_static }}" style="border-radius: 100%" data-toggle="tooltip" data-placement="bottom" title="Open profile"/></a> {{ user.name }}</h1>
 
-    <p>{{ user.mastodonObject.note|raw }}</p>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <p>{{ user.mastodonObject.note|raw }}</p>
+        </div>
+    </div>
 
+    {#<div class="panel panel-default">
+        <div class="panel-heading">Settings</div>
+        <div class="panel-body">
+            <p>Setting</p>
+        </div>
+    </div>#}
 
-    {{ dump(user.mastodonObject) }}
+    <ul>
+        <li><a href="/status/all">View scheduled statuses</a></li>
+        <li><a href="{{ user.mastodonObject.url }}" target="_blank" >Open your Mastodon profile</a></li>
+    </ul>
     
 {% endblock %}

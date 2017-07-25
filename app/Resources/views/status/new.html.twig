@@ -22,6 +22,7 @@
                     <input type="text" class="form-control" id="MastodonAuth_instance" placeholder="https://mastodon.social" required>
                 </div>
                 <button type="submit" class="btn btn-default">Sign in</button>
+                <p class="help-block"></p>
                 {% endif %}
             </div>
         </div>
@@ -33,7 +34,7 @@
         </div>
         <div class="form-group">
             {{ form_label(form.content) }}
-            {{ form_widget(form.content) }}
+            {{ form_widget(form.content, {'attr': {'placeholder': 'What will be on your mind?'} }) }}
         </div>
         <div class="form-group">
             {{ form_label(form.datetime) }}
@@ -44,5 +45,5 @@
     {{ form_end(form) }}
 
     <script src="{{ asset('lib/mastodon.js') }}"></script>
-    <script src="{{ asset('newStatus_script.js') }}"></script>
+    <script src="{{ asset('assets/js/newStatus_script.js') }}"></script>
 {% endblock %}
