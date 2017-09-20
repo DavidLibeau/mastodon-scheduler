@@ -65,7 +65,7 @@ class statusController extends Controller
             curl_close($ch);
             
 
-			if(json_decode($ch_res)->error){ //error tooting
+			if(!empty(json_decode($ch_res)->error)){ //error tooting
 				array_push ($data, "error tooting : ");
 				array_push ($data, json_decode($ch_res)->error);
 			}else{
