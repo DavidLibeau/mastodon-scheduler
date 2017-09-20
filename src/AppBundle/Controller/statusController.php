@@ -25,6 +25,10 @@ class statusController extends Controller
      */
     public function cronAction(Request $request)
     {
+    	$data=array();
+        array_push ($data, array("Dump"));
+        
+        
         $repository = $this->getDoctrine()
             ->getRepository('AppBundle:status');
 
@@ -35,7 +39,7 @@ class statusController extends Controller
 
         $statuses = $query->getResult();
 
-        $data=array();
+		//array_push ($data, $statuses);
 
         foreach($statuses as $status){
 
@@ -60,12 +64,17 @@ class statusController extends Controller
             $ch_res=curl_exec( $ch );
             curl_close($ch);
             
-            array_push ($data, $ch_res);
 
-            if(json_decode($ch_res)->created_at){
-                $em->remove($status);
-                $em->flush();
+			if(json_decode($ch_res)->error){ //error tooting
+				array_push ($data, "error tooting : ");
+				array_push ($data, json_decode($ch_res)->error);
+			}else{
+            	if(json_decode($ch_res)->created_at){
+                	$em->remove($status);
+                	$em->flush();
+            	}
             }
+            
         }
 
         return new Response("ok");
