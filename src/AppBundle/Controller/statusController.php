@@ -69,7 +69,7 @@ class statusController extends Controller
 				array_push ($data, "error tooting : ");
 				array_push ($data, json_decode($ch_res)->error);
 			}else{
-            	if(json_decode($ch_res)->created_at){
+            	if(is_object(json_decode($ch_res)) && json_decode($ch_res)->created_at){
                 	$em->remove($status);
                 	$em->flush();
             	}
